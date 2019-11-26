@@ -1,0 +1,11 @@
+ul.menu
+  -
+    var pages = [
+      ["#", "Home"],
+      ["#", "Services"],
+      ["#", "Work"],
+      ["#", "About"],
+    ]
+  each page in pages
+    li.menu-item
+      a(href=`${page[0]}`).menu-link #{page[1]}

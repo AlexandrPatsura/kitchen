@@ -1,0 +1,70 @@
+$width: 100px;
+$height: 10px;
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
+  position: relative;
+  
+  width: $width;
+  height: $width;
+  
+  padding: 10px;
+  background-color: white;
+  cursor: pointer;
+  
+  span {
+    position: absolute;
+    width: $width - 20px; 
+    height: $height;
+    
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 1);
+    
+    transition: all .5s;
+    transition-delay: 0s, .5s;
+  }
+
+  .top {
+    top: 10px;
+  }
+
+  .center {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .bottom {
+    bottom: 10px;
+    
+    width: $width - 50px;
+    align-self: flex-end;
+  }
+}
+
+.burger.burger-active {
+  
+  .top {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    // transition-delay: 0s, .5s;
+    transition-property: top, transform;
+  }
+  
+  .center {
+    opacity: 0;
+    width: 0;
+  }
+  
+  .bottom {
+    bottom: 40%;
+    transform: translateY(-50%) rotate(-45deg);
+    // transition-delay: 0s, .5s;
+    transition-property: bottom, transform;
+    
+    width: $width - 20px;
+  }
+}
